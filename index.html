@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>VirusAI — Private Offensive Security Workspace</title>
   <meta name="description" content="A private offensive-security workspace. Single desktop binary with terminal, instrumented browser, and code editor, backed by an autonomous engine, private PostgreSQL, and recording proxy.">
   
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Ambient Atmospheric Fog -->
+  <!-- Ambient Atmospheric Atmosphere -->
   <div class="ambient-fog"></div>
   <div class="ambient-noise"></div>
 
@@ -26,7 +26,8 @@
         <span class="nav-brand-text">VirusAI</span>
       </a>
 
-      <ul class="nav-links">
+      <!-- Desktop & Mobile Links -->
+      <ul class="nav-links" id="navLinks">
         <li><a href="#showcase" class="nav-link">Workspace</a></li>
         <li><a href="#principles" class="nav-link">Principles</a></li>
         <li><a href="#architecture" class="nav-link">Architecture</a></li>
@@ -35,55 +36,59 @@
 
       <div class="nav-actions">
         <a href="#download" class="btn btn-sm btn-primary">Get VirusAI</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Editorial Architectural Hero Section -->
+  <!-- Editorial Full-Bleed Architectural Hero Section -->
   <section class="hero-editorial">
+    <!-- Immersive Building Backdrop (Bleeds across the right & background) -->
+    <div class="hero-bleed-backdrop">
+      <img src="assets/hero-structure.jpg" alt="VirusAI Architectural Bastion" class="hero-bleed-img">
+      <div class="hero-bleed-gradient-left"></div>
+      <div class="hero-bleed-gradient-bottom"></div>
+      <div class="hero-bleed-gradient-top"></div>
+    </div>
+
+    <!-- Floating Live Status on Desktop -->
+    <div class="hero-architectural-status">
+      <span class="pulse-dot"></span>
+      <span>Engine :8790 &middot; Proxy :8791 Active</span>
+    </div>
+
     <div class="container">
-      <div class="hero-editorial-grid">
-        <!-- Editorial Left Column -->
-        <div class="hero-editorial-content">
-          <div class="hero-pill-badge">
-            <span class="hero-pill-indicator"></span>
-            <span>Est. 2024 &middot; Sovereign Workspace</span>
-          </div>
-
-          <h1 class="hero-editorial-title">
-            Built to<br>
-            command<br>
-            the surface<span class="period">.</span>
-          </h1>
-
-          <p class="hero-editorial-desc">
-            A private offensive-security workspace, engineered for modern operators. Single desktop binary, private database, and fail-closed proxy.
-          </p>
-
-          <div class="hero-editorial-actions">
-            <a href="#download" class="btn btn-lg btn-primary">Download VirusAI</a>
-            <a href="#showcase" class="btn btn-lg btn-pill-ghost">Explore Panes</a>
-          </div>
-
-          <div class="hero-editorial-proof">
-            <span>PostgreSQL 16 embedded</span>
-            <span class="proof-sep">&bull;</span>
-            <span>Fail-closed proxy</span>
-            <span class="proof-sep">&bull;</span>
-            <span>Zero telemetry</span>
-          </div>
+      <div class="hero-editorial-content">
+        <div class="hero-pill-badge">
+          <span class="hero-pill-indicator"></span>
+          <span>Est. 2024 &middot; Sovereign Workspace</span>
         </div>
 
-        <!-- Atmospheric Architectural Visual -->
-        <div class="hero-editorial-visual">
-          <div class="architectural-image-container">
-            <img src="assets/hero-structure.jpg" alt="VirusAI Bastion">
-            <div class="architectural-overlay-fade"></div>
-            <div class="architectural-floating-badge">
-              <span class="pulse-dot"></span>
-              <span>Engine :8790 &middot; Proxy :8791 Active</span>
-            </div>
-          </div>
+        <h1 class="hero-editorial-title">
+          Built to<br>
+          command<br>
+          the surface<span class="period">.</span>
+        </h1>
+
+        <p class="hero-editorial-desc">
+          A private offensive-security workspace, engineered for modern operators. Single desktop binary, private database, and fail-closed proxy.
+        </p>
+
+        <div class="hero-editorial-actions">
+          <a href="#download" class="btn btn-lg btn-primary">Download VirusAI</a>
+          <a href="#showcase" class="btn btn-lg btn-pill-ghost">Explore Panes</a>
+        </div>
+
+        <div class="hero-editorial-proof">
+          <span>PostgreSQL 16 embedded</span>
+          <span class="proof-sep">&bull;</span>
+          <span>Fail-closed proxy</span>
+          <span class="proof-sep">&bull;</span>
+          <span>Zero telemetry</span>
         </div>
       </div>
     </div>

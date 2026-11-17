@@ -3,7 +3,26 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Showcase Tab Switching
+  // 1. Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking any nav link
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  }
+
+  // 2. Showcase Tab Switching
   const showcaseTabs = document.querySelectorAll('.tab-btn');
   const showcaseImg = document.getElementById('showcase-image');
   const captionTitle = document.getElementById('caption-title');
@@ -73,12 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Make initial image visible
   if (showcaseImg) {
     showcaseImg.classList.add('visible');
   }
 
-  // 2. OS Auto-Detection & Download Tabs
+  // 3. OS Auto-Detection & Download Tabs
   const osButtons = document.querySelectorAll('.os-tab-btn');
   const osPanels = document.querySelectorAll('.download-panel');
 
@@ -133,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Copy to Clipboard
+  // 4. Copy to Clipboard
   window.copySnippet = function(elementId, btnElement) {
     const codeEl = document.getElementById(elementId);
     if (!codeEl) return;
