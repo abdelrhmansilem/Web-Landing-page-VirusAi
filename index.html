@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VirusAI — Private Offensive Security Workspace</title>
+  <meta name="description" content="A private offensive-security workspace. Single desktop binary with terminal, instrumented browser, and code editor, backed by an autonomous engine, private PostgreSQL, and recording proxy.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Atmosphere -->
+  <div class="ambient-glow"></div>
+  <div class="ambient-grid"></div>
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <a href="#" class="nav-brand">
+        <img src="assets/logo.svg" alt="VirusAI Logo">
+        <span class="nav-title">VirusAI <span class="nav-badge">v2.0</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#showcase" class="nav-link">Workspace</a></li>
+        <li><a href="#features" class="nav-link">Capabilities</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#download" class="nav-link">Downloads</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://github.com/abdelrhmansilem/VirusAI" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="#download" class="btn btn-sm btn-primary">Get VirusAI</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-pill">
+        <span class="hero-pill-dot"></span>
+        <span>Fail-Closed Scope Gate &middot; Zero Dependencies</span>
+      </div>
+
+      <h1>
+        The Private Offensive-Security Workspace.<br>
+        <span class="gradient-text">Controlled. Autonomous. </span><span class="accent-red">Fail-Closed.</span>
+      </h1>
+
+      <p class="hero-sub">
+        One desktop application with an integrated terminal, an instrumented browser, and a Monaco code editor, backed by an engine that owns its own private PostgreSQL cluster and recording proxy.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#download" class="btn btn-lg btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download VirusAI
+        </a>
+        <a href="#showcase" class="btn btn-lg btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          Explore Workspace
+        </a>
+      </div>
+
+      <div class="hero-specs-bar">
+        <div class="hero-spec-item">
+          <span class="spec-dot"></span>
+          <span>Engine API: :8790</span>
+        </div>
+        <div class="hero-spec-item">
+          <span class="spec-dot red"></span>
+          <span>MitM Proxy: :8791</span>
+        </div>
+        <div class="hero-spec-item">
+          <span class="spec-dot"></span>
+          <span>PostgreSQL: :8792</span>
+        </div>
+        <div class="hero-spec-item">
+          <span>Cold Start &lt; 90s</span>
+        </div>
+        <div class="hero-spec-item">
+          <span>Zero Telemetry</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive App Showcase -->
+  <section id="showcase" class="showcase">
+    <div class="container">
+      <div class="showcase-frame">
+        <div class="showcase-header">
+          <div class="window-dots">
+            <div class="window-dot close"></div>
+            <div class="window-dot min"></div>
+            <div class="window-dot max"></div>
+          </div>
+
+          <div class="showcase-tabs">
+            <button class="tab-btn active" data-tab="ide">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              IDE & Editor
+            </button>
+            <button class="tab-btn" data-tab="proxy">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              Proxy & Scope Gate
+            </button>
+            <button class="tab-btn" data-tab="terminal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              Terminal PTY
+            </button>
+            <button class="tab-btn" data-tab="browser">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              Security Browser
+            </button>
+            <button class="tab-btn" data-tab="agents">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              AI Agents
+            </button>
+            <button class="tab-btn" data-tab="findings">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Findings Matrix
+            </button>
+            <button class="tab-btn" data-tab="skills">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              Skill Library
+            </button>
+            <button class="tab-btn" data-tab="dashboard">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+              Dashboard
+            </button>
+          </div>
+        </div>
+
+        <div class="showcase-body">
+          <div class="showcase-image-wrapper">
+            <img id="showcase-image" src="assets/screenshots/ide-split-editor.png" alt="VirusAI Workspace" class="showcase-img visible">
+          </div>
+        </div>
+
+        <div class="showcase-caption">
+          <div>
+            <div id="caption-title" class="caption-title">Unified Tri-Pane IDE & Markdown Split Editor</div>
+            <div id="caption-desc" class="caption-desc">Monaco code editor side-by-side with live markdown rendering, integrated file tree, and detachable AI copilot HUD.</div>
+          </div>
+          <a href="#download" class="btn btn-sm btn-secondary">Try VirusAI</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Pillars / Features -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Core Principles</span>
+        <h2>Built for Rigorous Offensive Engineering</h2>
+        <p>No fragile dependencies. No cloud leakage. Strict scope validation at every layer.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          </div>
+          <h3>Zero Prerequisites</h3>
+          <p>Supervises its own private PostgreSQL 16 cluster. No Docker, no WSL configuration, and no external database server needed to start.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>Fail-Closed Scope Gate</h3>
+          <p>The recording proxy refuses out-of-scope requests before they touch the wire. Target scope is enforced across both human and agent actions.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
+          <h3>Tri-Pane Workspace</h3>
+          <p>Terminal, proxied browser, and Monaco file editor live in a single window with draggable dividers and detachable copilot tabs.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </div>
+          <h3>Omni Perception Agent</h3>
+          <p>The AI planner simultaneously ingests active terminal buffers, live browser DOM, open editor code, and recorded proxy traffic flows.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h3>Evidence Over Assertion</h3>
+          <p>Findings are accepted only with reproducible artifacts: control request, attack request, diff isolation, and confirmed re-test replay.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          </div>
+          <h3>100% Local & Encrypted</h3>
+          <p>Zero telemetry. No phone-home analytics. Model provider credentials and proxy secrets are encrypted at rest on your filesystem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Architecture & Port Mapping -->
+  <section id="architecture" class="architecture-section">
+    <div class="container">
+      <div class="arch-box">
+        <div class="arch-grid">
+          <div class="arch-info">
+            <span class="section-tag">System Design</span>
+            <h2>Self-Contained Engine & Isolated Subsystems</h2>
+            <p>
+              VirusAI coordinates independent background services bound strictly to localhost, preventing collision with existing system tools or proxy suites.
+            </p>
+            <div class="arch-ports-list">
+              <div class="arch-port-card">
+                <div>
+                  <div class="port-badge">:8790</div>
+                </div>
+                <div class="port-role">HTTP Engine REST API, SSE Events & Embedded UI</div>
+              </div>
+              <div class="arch-port-card">
+                <div>
+                  <div class="port-badge">:8791</div>
+                </div>
+                <div class="port-role">Security Recording MitM Proxy & Fail-Closed Gate</div>
+              </div>
+              <div class="arch-port-card">
+                <div>
+                  <div class="port-badge">:8792</div>
+                </div>
+                <div class="port-role">Private PostgreSQL 16 Cluster (Managed by pgkit)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="arch-code-preview">
+            <div class="code-comment">// Quick Verification & Service Health</div>
+            <div><span class="code-keyword">curl</span> -s http://127.0.0.1:8790/api/health</div>
+            <div class="code-comment"><br>// Response:</div>
+            <div>{</div>
+            <div>&nbsp;&nbsp;<span class="code-str">"status"</span>: <span class="code-str">"healthy"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="code-str">"version"</span>: <span class="code-str">"2.0.0-dev"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="code-str">"engine_port"</span>: <span class="code-fn">8790</span>,</div>
+            <div>&nbsp;&nbsp;<span class="code-str">"proxy_port"</span>: <span class="code-fn">8791</span>,</div>
+            <div>&nbsp;&nbsp;<span class="code-str">"postgres_port"</span>: <span class="code-fn">8792</span>,</div>
+            <div>&nbsp;&nbsp;<span class="code-str">"scope_gate"</span>: <span class="code-str">"FAIL_CLOSED_ACTIVE"</span></div>
+            <div>}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads Section -->
+  <section id="download" class="download-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Cross-Platform Distribution</span>
+        <h2>Download VirusAI for Your Platform</h2>
+        <p>Available as a standalone executable with embedded UI and self-supervised database.</p>
+      </div>
+
+      <!-- OS Selection Tabs -->
+      <div class="download-tabs-nav">
+        <button class="os-tab-btn" data-os="windows">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+          Windows
+        </button>
+        <button class="os-tab-btn" data-os="linux">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="6" y1="8" x2="6" y2="8"></line><line x1="10" y1="8" x2="10" y2="8"></line></svg>
+          Linux
+        </button>
+        <button class="os-tab-btn" data-os="macos">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 1.01-2.87-.96.04-2.1.65-2.73 1.4-.56.64-.99 1.7-1.01 2.76 1.08.08 2.12-.54 2.73-1.29z"/></svg>
+          macOS
+        </button>
+      </div>
+
+      <!-- Windows Downloads -->
+      <div id="os-windows" class="download-panel">
+        <div class="download-cards-grid">
+          <div class="download-card primary-installer">
+            <div class="card-top">
+              <span class="card-badge">Recommended</span>
+              <div class="card-title">VirusAI Desktop Setup</div>
+              <div class="card-meta">Windows 10 / 11 (64-bit) &middot; v2.0.0</div>
+              <p>Installer package bundling the Electron shell, Go engine, and PostgreSQL 16 cluster.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download .exe (Installer)
+            </a>
+          </div>
+
+          <div class="download-card">
+            <div class="card-top">
+              <span class="card-badge">Portable</span>
+              <div class="card-title">Portable Archive</div>
+              <div class="card-meta">Windows x64 (.zip) &middot; v2.0.0</div>
+              <p>Self-contained portable archive. Extract and launch <code>virusai.exe</code> with zero system installation.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download .zip (Portable)
+            </a>
+          </div>
+
+          <div class="download-card">
+            <div class="card-top">
+              <span class="card-badge">CLI Engine</span>
+              <div class="card-title">Engine Binary Only</div>
+              <div class="card-meta">Headless / Server Mode &middot; x64</div>
+              <p>Pure Go backend engine binary with embedded UI for headless security test benches.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download virusai.exe
+            </a>
+          </div>
+        </div>
+
+        <div class="download-terminal-box">
+          <div class="terminal-header">
+            <span class="terminal-label">Quick Install via PowerShell</span>
+          </div>
+          <div class="cli-code-row">
+            <div id="cmd-win" class="cli-code">iwr -useb https://raw.githubusercontent.com/abdelrhmansilem/VirusAI/main/install.ps1 | iex</div>
+            <button class="btn btn-sm btn-secondary" onclick="copySnippet('cmd-win', this)">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linux Downloads -->
+      <div id="os-linux" class="download-panel">
+        <div class="download-cards-grid">
+          <div class="download-card primary-installer">
+            <div class="card-top">
+              <span class="card-badge">Recommended</span>
+              <div class="card-title">VirusAI AppImage</div>
+              <div class="card-meta">Linux x86_64 &middot; Universal Binary</div>
+              <p>Single executable container running across Ubuntu, Debian, Arch, Fedora, and Kali Linux.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download .AppImage
+            </a>
+          </div>
+
+          <div class="download-card">
+            <div class="card-top">
+              <span class="card-badge">Debian / Kali</span>
+              <div class="card-title">Debian Package</div>
+              <div class="card-meta">.deb package &middot; system integration</div>
+              <p>Native Debian packaging with automatic desktop shortcuts and package manager updates.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download .deb
+            </a>
+          </div>
+
+          <div class="download-card">
+            <div class="card-top">
+              <span class="card-badge">Tarball</span>
+              <div class="card-title">Tar.gz Binary Archive</div>
+              <div class="card-meta">Linux x86_64 / aarch64</div>
+              <p>Raw standalone engine binaries and bundled scripts for automated CI/CD and cloud labs.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download .tar.gz
+            </a>
+          </div>
+        </div>
+
+        <div class="download-terminal-box">
+          <div class="terminal-header">
+            <span class="terminal-label">Quick Install via Terminal</span>
+          </div>
+          <div class="cli-code-row">
+            <div id="cmd-linux" class="cli-code">curl -sSL https://raw.githubusercontent.com/abdelrhmansilem/VirusAI/main/install.sh | bash</div>
+            <button class="btn btn-sm btn-secondary" onclick="copySnippet('cmd-linux', this)">Copy</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- macOS Downloads -->
+      <div id="os-macos" class="download-panel">
+        <div class="download-cards-grid">
+          <div class="download-card primary-installer">
+            <div class="card-top">
+              <span class="card-badge">Apple Silicon</span>
+              <div class="card-title">macOS Apple Silicon</div>
+              <div class="card-meta">M1 / M2 / M3 / M4 (.dmg) &middot; Universal</div>
+              <p>Optimized for Apple Silicon ARM architecture with hardware-accelerated local inference support.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download Apple Silicon (.dmg)
+            </a>
+          </div>
+
+          <div class="download-card">
+            <div class="card-top">
+              <span class="card-badge">Intel</span>
+              <div class="card-title">macOS Intel x86_64</div>
+              <div class="card-meta">Intel Mac (.dmg) &middot; macOS 12+</div>
+              <p>Native 64-bit installer for older x86_64 Apple MacBooks and Mac Pro workstations.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download Intel (.dmg)
+            </a>
+          </div>
+
+          <div class="download-card">
+            <div class="card-top">
+              <span class="card-badge">Homebrew</span>
+              <div class="card-title">Homebrew Cask</div>
+              <div class="card-meta">Terminal Package Manager</div>
+              <p>Instant installation and seamless updates through standard Homebrew package management.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI" target="_blank" rel="noopener" class="btn btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              View Brew Formula
+            </a>
+          </div>
+        </div>
+
+        <div class="download-terminal-box">
+          <div class="terminal-header">
+            <span class="terminal-label">Quick Install via Homebrew</span>
+          </div>
+          <div class="cli-code-row">
+            <div id="cmd-mac" class="cli-code">brew install abdelrhmansilem/tap/virusai</div>
+            <button class="btn btn-sm btn-secondary" onclick="copySnippet('cmd-mac', this)">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-brand">
+            <img src="assets/logo.svg" alt="VirusAI Logo">
+            <span class="nav-title">VirusAI</span>
+          </a>
+          <p>
+            An autonomous, private offensive-security workspace engineered for professional penetration testing, bug bounty researchers, and red teams.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#showcase">Workspace & Editor</a></li>
+            <li><a href="#features">Scope Gate & Proxy</a></li>
+            <li><a href="#architecture">Internal Ports</a></li>
+            <li><a href="#download">Downloads Matrix</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Repositories</h4>
+          <ul>
+            <li><a href="https://github.com/abdelrhmansilem/VirusAI" target="_blank" rel="noopener">VirusAI Core Engine</a></li>
+            <li><a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi" target="_blank" rel="noopener">Landing Page Repository</a></li>
+            <li><a href="https://github.com/abdelrhmansilem/VirusAI/blob/main/SECURITY.md" target="_blank" rel="noopener">Responsible Disclosure</a></li>
+            <li><a href="https://github.com/abdelrhmansilem/VirusAI/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 License</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 VirusAI. Licensed under GNU AGPLv3. All brand rights reserved.</div>
+        <div>Engineered with Jet Black, Smoke Grey &amp; Cherry Red.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
