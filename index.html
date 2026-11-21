@@ -437,7 +437,7 @@
           <!-- Setup Installer -->
           <div class="download-card highlight">
             <div class="card-top">
-              <span class="card-badge">Recommended</span>
+              <span class="card-badge">Installer</span>
               <div class="card-title">VirusAI Desktop Setup</div>
               <div class="card-meta">Windows 10 / 11 (64-bit) &middot; v0.1.0-beta.1 (162 MB)</div>
               <p>Complete installation package bundling the Electron shell, Go engine, and PostgreSQL 16 cluster.</p>
@@ -450,27 +450,52 @@
             </a>
           </div>
 
+          <!-- Portable Zip Archive (Antivirus-Friendly) -->
+          <div class="download-card highlight">
+            <div class="card-top">
+              <span class="card-badge">Recommended Archive</span>
+              <div class="card-title">VirusAI Portable (.zip)</div>
+              <div class="card-meta">Compressed ZIP &middot; v0.1.0-beta.1 (143 MB)</div>
+              <p>Compressed archive containing the standalone executable. Recommended to prevent browser download warnings.</p>
+              <div class="card-hash-box">
+                <span class="card-hash-label">SHA256:</span>b9a65257f9f3201fef6a9acafeb86b81af50fff0c64ff2a7e42b4bfa6541d6df
+              </div>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-0.1.0-beta.1-Windows-Portable.zip" class="btn btn-primary">
+              Download Portable (.zip)
+            </a>
+          </div>
+
           <!-- Portable Executable -->
           <div class="download-card">
             <div class="card-top">
-              <span class="card-badge">Portable</span>
-              <div class="card-title">VirusAI Standalone Portable</div>
-              <div class="card-meta">Windows x64 Standalone &middot; v0.1.0-beta.1 (143 MB)</div>
-              <p>Zero-installation portable binary. Run directly from any folder or USB storage without registry writes.</p>
+              <span class="card-badge">Portable (.exe)</span>
+              <div class="card-title">VirusAI Standalone (.exe)</div>
+              <div class="card-meta">Direct Binary &middot; v0.1.0-beta.1 (143 MB)</div>
+              <p>Direct standalone binary executable. Run directly from any folder without system installation.</p>
               <div class="card-hash-box">
                 <span class="card-hash-label">SHA256:</span>b9a65257f9f3201fef6a9acafeb86b81af50fff0c64ff2a7e42b4bfa6541d6df
               </div>
             </div>
             <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-0.1.0-beta.1.exe" class="btn btn-pill-ghost">
-              Download Portable (.exe)
+              Download Binary (.exe)
             </a>
           </div>
         </div>
 
-        <!-- Terminal Verification Box -->
+        <!-- Security / SmartScreen Notice Box -->
+        <div class="security-notice-box">
+          <div style="font-size: 1.25rem; line-height: 1;">🛡️</div>
+          <div>
+            <strong>Notice on Windows SmartScreen &amp; Browser Scanners:</strong>
+            Because VirusAI is a private offensive security workspace containing local network interception proxies and security testing capabilities, newly compiled beta releases without commercial EV code-signing certificates may trigger browser warnings (e.g. <em>"Unrecognized App"</em> or <em>"Keep anyway"</em>). This is a normal false-positive for penetration testing suites. On Windows SmartScreen, click <em>"More info"</em> &rarr; <em>"Run anyway"</em>, or download the <strong>Portable (.zip)</strong> archive above.
+          </div>
+        </div>
+
+        <!-- Terminal Direct Download & Verification Box -->
         <div class="download-terminal-box">
-          <div id="cmd-win" class="cli-code">certutil -hashfile .\VirusAI-Setup-0.1.0-beta.1.exe SHA256</div>
-          <button class="btn btn-sm btn-pill-ghost" onclick="copySnippet('cmd-win', this)">Copy Verify Command</button>
+          <div id="cmd-win" class="cli-code">curl.exe -L -o VirusAI-Setup.exe "https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe"</div>
+          <button class="btn btn-sm btn-pill-ghost" onclick="copySnippet('cmd-win', this)">Copy Terminal Command</button>
         </div>
       </div>
 

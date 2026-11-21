@@ -850,9 +850,33 @@ code, pre {
 
 .download-cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
-  margin-bottom: 36px;
+  margin-bottom: 24px;
+}
+
+.security-notice-box {
+  background: rgba(22, 23, 27, 0.7);
+  border: 1px solid rgba(200, 16, 46, 0.3);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin: 24px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.security-notice-box strong {
+  color: #FFFFFF;
+}
+
+.security-notice-box em {
+  color: var(--color-red);
+  font-style: normal;
+  font-weight: 600;
 }
 
 .download-card {
