@@ -445,7 +445,7 @@
                 <span class="card-hash-label">SHA256:</span>eefd420f4dea2a21123dfefb620189239dfd0d31ad6f77d36e50c277bf55ac15
               </div>
             </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe" class="btn btn-primary">
+            <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe" class="btn btn-primary">
               Download Installer (.exe)
             </a>
           </div>
@@ -453,16 +453,16 @@
           <!-- Portable Zip Archive (Antivirus-Friendly) -->
           <div class="download-card highlight">
             <div class="card-top">
-              <span class="card-badge">Headless Engine</span>
-              <div class="card-title">VirusAI Engine Bundle (.zip)</div>
-              <div class="card-meta">Compressed ZIP &middot; v0.1.0-beta.1</div>
-              <p>Full engine bundle: binary, PostgreSQL 16 cluster, and skills. Run start.bat and open http://127.0.0.1:8790.</p>
+              <span class="card-badge">Portable ZIP</span>
+              <div class="card-title">VirusAI Portable (.zip)</div>
+              <div class="card-meta">Windows 10 / 11 (64-bit) &middot; v0.1.0-beta.1 (143 MB)</div>
+              <p>The same standalone binary packaged as a ZIP archive. Use it if your browser or antivirus blocks direct .exe downloads &mdash; archives are usually delivered untouched. Unzip and run <code>VirusAI-0.1.0-beta.1.exe</code>.</p>
               <div class="card-hash-box">
-                <span class="card-hash-label">SHA256:</span>b9a65257f9f3201fef6a9acafeb86b81af50fff0c64ff2a7e42b4bfa6541d6df
+                <span class="card-hash-label">SHA256:</span>23a22814430634af1a27ff0b6c0417068c85fb7b4699112ad4fbb5f6b94fb547
               </div>
             </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/virusai-v0.1.0-beta.1-windows-amd64.zip" class="btn btn-primary">
-              Download Engine Bundle (.zip)
+            <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-0.1.0-beta.1-Windows-Portable.zip" class="btn btn-primary">
+              Download Portable (.zip)
             </a>
           </div>
 
@@ -477,7 +477,7 @@
                 <span class="card-hash-label">SHA256:</span>b9a65257f9f3201fef6a9acafeb86b81af50fff0c64ff2a7e42b4bfa6541d6df
               </div>
             </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/VirusAI-0.1.0-beta.1.exe" class="btn btn-pill-ghost">
+            <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-0.1.0-beta.1.exe" class="btn btn-pill-ghost">
               Download Binary (.exe)
             </a>
           </div>
@@ -487,14 +487,23 @@
         <div class="security-notice-box">
           <div style="font-size: 1.25rem; line-height: 1;">🛡️</div>
           <div>
-            <strong>Notice on Windows SmartScreen &amp; Browser Scanners:</strong>
-            Because VirusAI is a private offensive security workspace containing local network interception proxies and security testing capabilities, newly compiled beta releases without commercial EV code-signing certificates may trigger browser warnings (e.g. <em>"Unrecognized App"</em> or <em>"Keep anyway"</em>). This is a normal false-positive for penetration testing suites. On Windows SmartScreen, click <em>"More info"</em> &rarr; <em>"Run anyway"</em>, or download the <strong>Portable (.zip)</strong> archive above.
+            <strong>Notice on Windows SmartScreen &amp; Microsoft Defender:</strong>
+            VirusAI beta builds are not code-signed yet, and they ship a local network-interception proxy &mdash; so Windows has no reputation for them and browsers may show warnings (<em>"isn't commonly downloaded"</em>, <em>"SmartScreen cannot scan this file"</em>). These are reputation checks, not confirmed threats:
+            <ul style="margin: 10px 0 0 18px;">
+              <li><strong>Chrome:</strong> flagged download &rarr; click the <strong>&#9776;/&#x22EE;</strong> menu next to the file &rarr; <strong>Keep</strong>. If it says Defender "was not able to scan it", choose <strong>Keep anyway</strong>.</li>
+              <li><strong>Edge:</strong> hover the flagged download &rarr; <strong>&#x22EE;</strong> &rarr; <strong>Keep anyway</strong> (confirm again if asked).</li>
+              <li><strong>SmartScreen after opening:</strong> click <strong>More info</strong> &rarr; <strong>Run anyway</strong>.</li>
+              <li><strong>"NSIS Error / Installer integrity check has failed":</strong> the file arrived truncated &mdash; usually a scanner pausing a large download. Delete it, re-download, then verify the SHA256 above matches before running.</li>
+              <li><strong>"Windows cannot access the specified device, path, or file":</strong> right-click the installer &rarr; <strong>Properties</strong> &rarr; tick <strong>Unblock</strong> &rarr; OK, and add an exclusion for the file in Defender if it was quarantined.</li>
+            </ul>
           </div>
         </div>
 
         <!-- Terminal Direct Download & Verification Box -->
         <div class="download-terminal-box">
-          <div id="cmd-win" class="cli-code">curl.exe -L -o VirusAI-Setup.exe "https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe"</div>
+          <div id="cmd-win" class="cli-code">curl.exe -L -o VirusAI-Setup-0.1.0-beta.1.exe "https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe"
+certutil -hashfile VirusAI-Setup-0.1.0-beta.1.exe SHA256
+:: the hash must equal: eefd420f4dea2a21123dfefb620189239dfd0d31ad6f77d36e50c277bf55ac15</div>
           <button class="btn btn-sm btn-pill-ghost" onclick="copySnippet('cmd-win', this)">Copy Terminal Command</button>
         </div>
       </div>
@@ -509,8 +518,8 @@
               <div class="card-meta">Kali / Ubuntu / Debian / Arch (64-bit) &middot; v0.1.0-beta.1</div>
               <p>Full engine bundle with the embedded web UI, a pinned PostgreSQL 16 cluster, and the skill library. Zero system prerequisites.</p>
             </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/virusai-v0.1.0-beta.1-linux-amd64.zip" class="btn btn-primary">
-              Download Linux x86_64 (.zip)
+            <a href="mailto:abdelrhmansleem998@gmail.com?subject=VirusAI%20Linux%20x86_64%20Build%20Request" class="btn btn-primary">
+              Request Linux x86_64 Build
             </a>
           </div>
 
@@ -521,8 +530,8 @@
               <div class="card-meta">ARM servers / Raspberry-class devices &middot; v0.1.0-beta.1</div>
               <p>The same bundle for 64-bit ARM hosts: Oracle/AWS Graviton, Ampere, and ARM laptops.</p>
             </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/virusai-v0.1.0-beta.1-linux-arm64.zip" class="btn btn-primary">
-              Download Linux ARM64 (.zip)
+            <a href="mailto:abdelrhmansleem998@gmail.com?subject=VirusAI%20Linux%20ARM64%20Build%20Request" class="btn btn-primary">
+              Request Linux ARM64 Build
             </a>
           </div>
         </div>
