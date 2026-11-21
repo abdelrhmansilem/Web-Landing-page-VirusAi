@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>VirusAI — Private Offensive Security Workspace</title>
+  <title>VirusAI — Sovereign Offensive Security Workspace</title>
   <meta name="description" content="A private offensive-security workspace. Single desktop binary with terminal, instrumented browser, and code editor, backed by an autonomous engine, private PostgreSQL, and recording proxy.">
   
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
@@ -30,12 +30,12 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#showcase" class="nav-link">Workspace</a></li>
         <li><a href="#principles" class="nav-link">Principles</a></li>
-        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#docs" class="nav-link">Documentation</a></li>
         <li><a href="#download" class="nav-link">Downloads</a></li>
       </ul>
 
       <div class="nav-actions">
-        <a href="#download" class="btn btn-sm btn-primary">Get VirusAI</a>
+        <a href="#download" class="btn btn-sm btn-primary">Download v0.1.0-beta.1</a>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
           <span></span>
           <span></span>
@@ -75,12 +75,12 @@
         </h1>
 
         <p class="hero-editorial-desc">
-          A private offensive-security workspace, engineered for modern operators. Single desktop binary, private database, and fail-closed proxy.
+          A private offensive-security workspace, engineered for modern operators. Single desktop binary, private PostgreSQL cluster, and fail-closed recording proxy.
         </p>
 
         <div class="hero-editorial-actions">
-          <a href="#download" class="btn btn-lg btn-primary">Download VirusAI</a>
-          <a href="#showcase" class="btn btn-lg btn-pill-ghost">Explore Panes</a>
+          <a href="#download" class="btn btn-lg btn-primary">Download v0.1.0-beta.1</a>
+          <a href="#docs" class="btn btn-lg btn-pill-ghost">Operator Docs</a>
         </div>
 
         <div class="hero-editorial-proof">
@@ -131,7 +131,7 @@
             <div id="caption-title" class="caption-title">Unified Tri-Pane IDE & Markdown Split Editor</div>
             <div id="caption-desc" class="caption-desc">Monaco code editor side-by-side with live markdown rendering, integrated file tree, and detachable AI copilot HUD.</div>
           </div>
-          <a href="#download" class="btn btn-sm btn-pill-ghost">Get VirusAI</a>
+          <a href="#download" class="btn btn-sm btn-pill-ghost">Download 0.1.0-beta.1</a>
         </div>
       </div>
     </div>
@@ -185,44 +185,222 @@
     </div>
   </section>
 
-  <!-- Technical Architecture -->
-  <section id="architecture" class="arch-section">
+  <!-- Comprehensive Documentation Section (Operator Field Guide) -->
+  <section id="docs" class="docs-section">
     <div class="container">
-      <div class="arch-container-box">
-        <div>
-          <span class="section-editorial-tag">Architecture</span>
-          <h2 class="section-editorial-title">Local Engine & Bound Ports</h2>
-          <p style="margin-top: 12px;">
-            VirusAI coordinates independent background services bound strictly to localhost, preventing collision with existing system tools or proxy suites.
-          </p>
-          <div class="arch-ports-rows">
-            <div class="arch-port-item">
-              <span class="arch-port-tag">:8790</span>
-              <span class="arch-port-label">HTTP Engine REST API, SSE Events & Embedded UI</span>
-            </div>
-            <div class="arch-port-item">
-              <span class="arch-port-tag">:8791</span>
-              <span class="arch-port-label">Security Recording MitM Proxy & Fail-Closed Gate</span>
-            </div>
-            <div class="arch-port-item">
-              <span class="arch-port-tag">:8792</span>
-              <span class="arch-port-label">Private PostgreSQL 16 Cluster (Managed by pgkit)</span>
-            </div>
-          </div>
+      <div class="section-editorial-header">
+        <span class="section-editorial-tag">Operator Field Guide</span>
+        <h2 class="section-editorial-title">Documentation &amp; Runbook</h2>
+        <p style="margin-top: 8px;">Technical reference and operational standards for VirusAI v0.1.0-beta.1.</p>
+      </div>
+
+      <div class="docs-layout">
+        <!-- Sidebar Navigation Tabs -->
+        <div class="docs-nav-pills">
+          <button class="doc-tab-btn active" data-doc="setup">
+            <span>01. Setup &amp; First Run</span>
+            <span class="doc-tab-arrow">&rarr;</span>
+          </button>
+          <button class="doc-tab-btn" data-doc="scope">
+            <span>02. Fail-Closed Scope Gate</span>
+            <span class="doc-tab-arrow">&rarr;</span>
+          </button>
+          <button class="doc-tab-btn" data-doc="copilot">
+            <span>03. Omni Agent Copilot</span>
+            <span class="doc-tab-arrow">&rarr;</span>
+          </button>
+          <button class="doc-tab-btn" data-doc="storage">
+            <span>04. Storage &amp; Secrets</span>
+            <span class="doc-tab-arrow">&rarr;</span>
+          </button>
+          <button class="doc-tab-btn" data-doc="troubleshoot">
+            <span>05. Troubleshooting &amp; Ports</span>
+            <span class="doc-tab-arrow">&rarr;</span>
+          </button>
+          <button class="doc-tab-btn" data-doc="feedback">
+            <span>06. Feedback &amp; Contact</span>
+            <span class="doc-tab-arrow">&rarr;</span>
+          </button>
         </div>
 
-        <div class="arch-terminal-block">
-          <div style="color: var(--text-muted); margin-bottom: 8px;">// Health Check Verification</div>
-          <div><span style="color: var(--color-red);">curl</span> -s http://127.0.0.1:8790/api/health</div>
-          <div style="color: var(--text-muted); margin: 12px 0 6px;">// Output:</div>
-          <div>{</div>
-          <div>&nbsp;&nbsp;<span style="color: #93C5FD;">"status"</span>: <span style="color: #86EFAC;">"healthy"</span>,</div>
-          <div>&nbsp;&nbsp;<span style="color: #93C5FD;">"version"</span>: <span style="color: #86EFAC;">"2.0.0-dev"</span>,</div>
-          <div>&nbsp;&nbsp;<span style="color: #93C5FD;">"engine_port"</span>: 8790,</div>
-          <div>&nbsp;&nbsp;<span style="color: #93C5FD;">"proxy_port"</span>: 8791,</div>
-          <div>&nbsp;&nbsp;<span style="color: #93C5FD;">"postgres_port"</span>: 8792,</div>
-          <div>&nbsp;&nbsp;<span style="color: #93C5FD;">"scope_gate"</span>: <span style="color: #86EFAC;">"FAIL_CLOSED_ACTIVE"</span></div>
-          <div>}</div>
+        <!-- Documentation Content Panels -->
+        <div class="docs-content-container">
+          <!-- Panel 1: Setup & First Run -->
+          <div id="doc-setup" class="doc-panel active">
+            <span class="doc-spec-badge">LIFECYCLE &middot; ZERO PREREQUISITES</span>
+            <h3>Installation &amp; Cold Boot</h3>
+            <p class="doc-lead">
+              VirusAI ships as a self-contained executable that supervises its own private PostgreSQL 16 cluster. No external dependencies, admin rights, or database installations required.
+            </p>
+
+            <div class="doc-block">
+              <h4>1. Choose Your Distribution Package</h4>
+              <p>
+                - <strong>Setup Installer (.exe):</strong> Installs to user application directory, establishes desktop shortcuts, and registers file associations.<br>
+                - <strong>Portable (.exe):</strong> Standalone executable. Run directly from any directory or removable drive without system modification.
+              </p>
+            </div>
+
+            <div class="doc-block">
+              <h4>2. Cold Start Execution (30-45 Seconds)</h4>
+              <p>
+                Upon initial launch, the Go engine automatically provisions a private PostgreSQL 16 cluster under <code>%APPDATA%\VirusAI\data\pg</code>, runs baseline migrations, generates root CA certificates, and spawns the recording proxy on <code>127.0.0.1:8791</code>.
+              </p>
+            </div>
+
+            <div class="doc-block">
+              <h4>3. Frictionless Desktop Auto-Login</h4>
+              <p>
+                The native Desktop shell acquires an ephemeral engine authentication token on startup and navigates directly into the IDE workspace. Subsequent warm launches adopt the existing cluster in under 5 seconds.
+              </p>
+            </div>
+          </div>
+
+          <!-- Panel 2: Fail-Closed Scope Gate -->
+          <div id="doc-scope" class="doc-panel">
+            <span class="doc-spec-badge">GOVERNANCE &middot; TARGET PROTECTION</span>
+            <h3>Fail-Closed Scope Gate</h3>
+            <p class="doc-lead">
+              The fundamental safety guarantee of VirusAI: out-of-scope network traffic is terminated before a socket connection or DNS query can ever occur.
+            </p>
+
+            <div class="doc-block">
+              <h4>Strict Ingress / Egress Validation</h4>
+              <p>
+                All traffic initiated by the embedded browser, automated tools, or autonomous agents routes through the internal proxy (<code>127.0.0.1:8791</code>). The proxy inspects the destination against declared project scope rules.
+              </p>
+            </div>
+
+            <div class="doc-block">
+              <h4>Zero Scope Slip Policy</h4>
+              <p>
+                Any request directed toward an unapproved host is immediately rejected with <code>403 Forbidden (Out of Scope)</code>. There is no bypass toggle in the UI, guaranteeing that operators and agents remain fully compliant with engagement boundaries.
+              </p>
+            </div>
+
+            <div class="doc-block">
+              <h4>Scope Definition</h4>
+              <p>
+                Operators define target IP ranges, CIDR blocks, or wildcards (e.g. <code>*.target.com</code>) inside project settings or directly within the Proxy Workbench tab.
+              </p>
+            </div>
+          </div>
+
+          <!-- Panel 3: Omni Agent Copilot -->
+          <div id="doc-copilot" class="doc-panel">
+            <span class="doc-spec-badge">AUTONOMOUS ASSISTANT &middot; MULTI-SURFACE</span>
+            <h3>Omni Agent HUD (Ctrl+Space)</h3>
+            <p class="doc-lead">
+              An integrated reasoning engine with simultaneous multi-surface awareness across code, terminal buffers, browser DOM, and HTTP proxy history.
+            </p>
+
+            <div class="doc-block">
+              <h4>Non-Intrusive Ergonomic HUD</h4>
+              <p>
+                Press <code>Ctrl+Space</code> at any time to summon or dismiss the Omni Agent HUD. The assistant dynamically squeezes the workspace horizontally instead of covering active code or terminal scrollback.
+              </p>
+            </div>
+
+            <div class="doc-block">
+              <h4>Evidence Before Assertion</h4>
+              <p>
+                The AI agent never hallucinates vulnerabilities. A finding is only registered when supported by reproducible evidence: control request, attack request, isolated difference diff, and replay confirmation.
+              </p>
+            </div>
+
+            <div class="doc-block">
+              <h4>Disposable Identity Automation</h4>
+              <p>
+                Built-in disposable email mailbox provisioning with background OTP and magic-link extraction. Enables automated testing of registration flows, password resets, and BOLA/IDOR authorization flaws.
+              </p>
+            </div>
+          </div>
+
+          <!-- Panel 4: Storage & Secrets -->
+          <div id="doc-storage" class="doc-panel">
+            <span class="doc-spec-badge">SOVEREIGNTY &middot; LOCAL ENCRYPTION</span>
+            <h3>Local Persistence &amp; Privacy</h3>
+            <p class="doc-lead">
+              VirusAI operates on a strict zero-telemetry architecture. All target data, credentials, and traffic streams remain entirely on your local machine.
+            </p>
+
+            <div class="doc-block">
+              <h4>Filesystem Layout</h4>
+              <p>
+                All operational state lives under <code>%APPDATA%\VirusAI\</code>:
+              </p>
+              <div class="doc-code-row">
+                %APPDATA%\VirusAI\<br>
+                ├── data\pg\ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Private PostgreSQL 16 cluster<br>
+                ├── data\traffic\ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Recorded exchanges &amp; CA certificates<br>
+                ├── settings.json &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Loopback ports &amp; workspace preferences<br>
+                └── engine.log &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Internal supervisor diagnostics
+              </div>
+            </div>
+
+            <div class="doc-block">
+              <h4>Encrypted Secrets Store</h4>
+              <p>
+                Third-party LLM API keys (OpenAI, Anthropic, OpenRouter, local Ollama) and proxy private keys are encrypted at rest using AES-256-GCM.
+              </p>
+            </div>
+          </div>
+
+          <!-- Panel 5: Troubleshooting & Ports -->
+          <div id="doc-troubleshoot" class="doc-panel">
+            <span class="doc-spec-badge">DIAGNOSTICS &middot; PORT MANAGEMENT</span>
+            <h3>Port Configuration &amp; Runbook</h3>
+            <p class="doc-lead">
+              VirusAI isolates its background processes strictly to loopback interfaces (<code>127.0.0.1</code>) to prevent collisions with host firewalls or external suites.
+            </p>
+
+            <div class="doc-block">
+              <h4>Default Loopback Ports</h4>
+              <p>
+                - <strong>8790:</strong> Engine HTTP API &amp; Embedded Web UI<br>
+                - <strong>8791:</strong> Security Recording MitM Proxy<br>
+                - <strong>8792:</strong> Private Embedded PostgreSQL Cluster
+              </p>
+            </div>
+
+            <div class="doc-block">
+              <h4>Handling Port Conflicts</h4>
+              <p>
+                If ports 8790–8792 are occupied by other developer tools, customize the port mappings in <code>%APPDATA%\VirusAI\settings.json</code>:
+              </p>
+              <div class="doc-code-row">
+                { "engine_port": 8890, "proxy_port": 8891, "pg_port": 8892 }
+              </div>
+            </div>
+
+            <div class="doc-block">
+              <h4>HTTPS Proxy Certificate Installation</h4>
+              <p>
+                To intercept and inspect HTTPS traffic, install the dynamically generated root CA into your system certificate store: <code>%APPDATA%\VirusAI\data\traffic\ca.crt</code>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Panel 6: Feedback & Contact -->
+          <div id="doc-feedback" class="doc-panel">
+            <span class="doc-spec-badge">COMMUNITY &middot; DIRECT SUPPORT</span>
+            <h3>Evaluation, Bug Reports &amp; Contact</h3>
+            <p class="doc-lead">
+              We welcome evaluation feedback, bug reports, and operational inquiries from security researchers and red teams.
+            </p>
+
+            <div class="doc-block">
+              <h4>Direct Operator Support</h4>
+              <p>
+                For technical issues, bug reports, or feature recommendations, reach out directly via email:
+              </p>
+              <div class="doc-contact-highlight">
+                <strong>Email:</strong> <a href="mailto:abdelrhmansleem998@gmail.com">abdelrhmansleem998@gmail.com</a><br>
+                <strong>Lead Developer:</strong> عبدالرحمن سليم (Abdelrhman Silem)<br>
+                <strong>Response Window:</strong> High priority response for security evaluation findings and bug reports.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -232,9 +410,9 @@
   <section id="download" class="download-section">
     <div class="container">
       <div class="section-editorial-header" style="text-align: center;">
-        <span class="section-editorial-tag">Distribution</span>
-        <h2 class="section-editorial-title">Download VirusAI</h2>
-        <p style="margin-top: 8px;">Available as a standalone executable with embedded UI and self-supervised database.</p>
+        <span class="section-editorial-tag">Binary Distribution</span>
+        <h2 class="section-editorial-title">Download VirusAI v0.1.0-beta.1</h2>
+        <p style="margin-top: 8px;">Standalone desktop binaries with bundled PostgreSQL 16 cluster and recording proxy.</p>
       </div>
 
       <!-- OS Selection Tabs -->
@@ -256,138 +434,71 @@
       <!-- Windows Downloads -->
       <div id="os-windows" class="download-panel">
         <div class="download-cards-grid">
+          <!-- Setup Installer -->
           <div class="download-card highlight">
             <div class="card-top">
               <span class="card-badge">Recommended</span>
               <div class="card-title">VirusAI Desktop Setup</div>
-              <div class="card-meta">Windows 10 / 11 (64-bit) &middot; v2.0.0</div>
-              <p>Installer package bundling the Electron shell, Go engine, and PostgreSQL 16 cluster.</p>
+              <div class="card-meta">Windows 10 / 11 (64-bit) &middot; v0.1.0-beta.1 (162 MB)</div>
+              <p>Complete installation package bundling the Electron shell, Go engine, and PostgreSQL 16 cluster.</p>
+              <div class="card-hash-box">
+                <span class="card-hash-label">SHA256:</span>eefd420f4dea2a21123dfefb620189239dfd0d31ad6f77d36e50c277bf55ac15
+              </div>
             </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-primary">
-              Download .exe (Installer)
+            <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe" class="btn btn-primary">
+              Download Installer (.exe)
             </a>
           </div>
 
+          <!-- Portable Executable -->
           <div class="download-card">
             <div class="card-top">
               <span class="card-badge">Portable</span>
-              <div class="card-title">Portable Archive</div>
-              <div class="card-meta">Windows x64 (.zip) &middot; v2.0.0</div>
-              <p>Self-contained portable archive. Extract and launch <code>virusai.exe</code> with zero system installation.</p>
+              <div class="card-title">VirusAI Standalone Portable</div>
+              <div class="card-meta">Windows x64 Standalone &middot; v0.1.0-beta.1 (143 MB)</div>
+              <p>Zero-installation portable binary. Run directly from any folder or USB storage without registry writes.</p>
+              <div class="card-hash-box">
+                <span class="card-hash-label">SHA256:</span>b9a65257f9f3201fef6a9acafeb86b81af50fff0c64ff2a7e42b4bfa6541d6df
+              </div>
             </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-pill-ghost">
-              Download .zip (Portable)
-            </a>
-          </div>
-
-          <div class="download-card">
-            <div class="card-top">
-              <span class="card-badge">CLI Engine</span>
-              <div class="card-title">Engine Binary Only</div>
-              <div class="card-meta">Headless / Server Mode &middot; x64</div>
-              <p>Pure Go backend engine binary with embedded UI for headless security test benches.</p>
-            </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-pill-ghost">
-              Download virusai.exe
+            <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-0.1.0-beta.1.exe" class="btn btn-pill-ghost">
+              Download Portable (.exe)
             </a>
           </div>
         </div>
 
+        <!-- Terminal Verification Box -->
         <div class="download-terminal-box">
-          <div id="cmd-win" class="cli-code">iwr -useb https://raw.githubusercontent.com/abdelrhmansilem/VirusAI/main/install.ps1 | iex</div>
-          <button class="btn btn-sm btn-pill-ghost" onclick="copySnippet('cmd-win', this)">Copy</button>
+          <div id="cmd-win" class="cli-code">certutil -hashfile .\VirusAI-Setup-0.1.0-beta.1.exe SHA256</div>
+          <button class="btn btn-sm btn-pill-ghost" onclick="copySnippet('cmd-win', this)">Copy Verify Command</button>
         </div>
       </div>
 
       <!-- Linux Downloads -->
       <div id="os-linux" class="download-panel">
-        <div class="download-cards-grid">
-          <div class="download-card highlight">
-            <div class="card-top">
-              <span class="card-badge">Recommended</span>
-              <div class="card-title">VirusAI AppImage</div>
-              <div class="card-meta">Linux x86_64 &middot; Universal Binary</div>
-              <p>Single executable container running across Ubuntu, Debian, Arch, Fedora, and Kali Linux.</p>
-            </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-primary">
-              Download .AppImage
-            </a>
-          </div>
-
-          <div class="download-card">
-            <div class="card-top">
-              <span class="card-badge">Debian / Kali</span>
-              <div class="card-title">Debian Package</div>
-              <div class="card-meta">.deb package &middot; system integration</div>
-              <p>Native Debian packaging with automatic desktop shortcuts and package manager updates.</p>
-            </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-pill-ghost">
-              Download .deb
-            </a>
-          </div>
-
-          <div class="download-card">
-            <div class="card-top">
-              <span class="card-badge">Tarball</span>
-              <div class="card-title">Tar.gz Binary Archive</div>
-              <div class="card-meta">Linux x86_64 / aarch64</div>
-              <p>Raw standalone engine binaries and bundled scripts for automated CI/CD and cloud labs.</p>
-            </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-pill-ghost">
-              Download .tar.gz
-            </a>
-          </div>
-        </div>
-
-        <div class="download-terminal-box">
-          <div id="cmd-linux" class="cli-code">curl -sSL https://raw.githubusercontent.com/abdelrhmansilem/VirusAI/main/install.sh | bash</div>
-          <button class="btn btn-sm btn-pill-ghost" onclick="copySnippet('cmd-linux', this)">Copy</button>
+        <div class="download-card" style="max-width: 680px; margin: 0 auto; text-align: center; padding: 40px 30px;">
+          <span class="card-badge">In Testing</span>
+          <div class="card-title">Linux Universal AppImage &amp; .deb</div>
+          <p style="margin: 16px 0 24px;">
+            Linux packages (x86_64 AppImage and Debian packages) are currently undergoing beta certification. Pre-release engine binaries for Kali / Ubuntu / Arch can be requested directly.
+          </p>
+          <a href="mailto:abdelrhmansleem998@gmail.com?subject=VirusAI Linux Build Request" class="btn btn-pill-ghost" style="margin: 0 auto;">
+            Request Linux Pre-Release Binary
+          </a>
         </div>
       </div>
 
       <!-- macOS Downloads -->
       <div id="os-macos" class="download-panel">
-        <div class="download-cards-grid">
-          <div class="download-card highlight">
-            <div class="card-top">
-              <span class="card-badge">Apple Silicon</span>
-              <div class="card-title">macOS Apple Silicon</div>
-              <div class="card-meta">M1 / M2 / M3 / M4 (.dmg) &middot; Universal</div>
-              <p>Optimized for Apple Silicon ARM architecture with hardware-accelerated local inference support.</p>
-            </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-primary">
-              Download Apple Silicon (.dmg)
-            </a>
-          </div>
-
-          <div class="download-card">
-            <div class="card-top">
-              <span class="card-badge">Intel</span>
-              <div class="card-title">macOS Intel x86_64</div>
-              <div class="card-meta">Intel Mac (.dmg) &middot; macOS 12+</div>
-              <p>Native 64-bit installer for older x86_64 Apple MacBooks and Mac Pro workstations.</p>
-            </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI/releases" target="_blank" rel="noopener" class="btn btn-pill-ghost">
-              Download Intel (.dmg)
-            </a>
-          </div>
-
-          <div class="download-card">
-            <div class="card-top">
-              <span class="card-badge">Homebrew</span>
-              <div class="card-title">Homebrew Cask</div>
-              <div class="card-meta">Terminal Package Manager</div>
-              <p>Instant installation and seamless updates through standard Homebrew package management.</p>
-            </div>
-            <a href="https://github.com/abdelrhmansilem/VirusAI" target="_blank" rel="noopener" class="btn btn-pill-ghost">
-              View Brew Formula
-            </a>
-          </div>
-        </div>
-
-        <div class="download-terminal-box">
-          <div id="cmd-mac" class="cli-code">brew install abdelrhmansilem/tap/virusai</div>
-          <button class="btn btn-sm btn-pill-ghost" onclick="copySnippet('cmd-mac', this)">Copy</button>
+        <div class="download-card" style="max-width: 680px; margin: 0 auto; text-align: center; padding: 40px 30px;">
+          <span class="card-badge">In Testing</span>
+          <div class="card-title">macOS Apple Silicon &amp; Intel (.dmg)</div>
+          <p style="margin: 16px 0 24px;">
+            macOS universal builds for Apple Silicon (M1/M2/M3/M4) and Intel x86_64 are undergoing gate verification. Contact the lead developer to receive early operator access.
+          </p>
+          <a href="mailto:abdelrhmansleem998@gmail.com?subject=VirusAI macOS Build Request" class="btn btn-pill-ghost" style="margin: 0 auto;">
+            Request macOS Pre-Release Build
+          </a>
         </div>
       </div>
     </div>
@@ -403,33 +514,34 @@
             <span class="nav-brand-text">VirusAI</span>
           </a>
           <p>
-            An autonomous, private offensive-security workspace engineered for professional penetration testing, bug bounty researchers, and red teams.
+            An autonomous, sovereign offensive-security workspace engineered for professional penetration testing, bug bounty researchers, and red teams.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Product</h4>
+          <h4>Navigation</h4>
           <ul>
-            <li><a href="#showcase">Workspace & Editor</a></li>
-            <li><a href="#principles">Scope Gate & Proxy</a></li>
-            <li><a href="#architecture">Internal Ports</a></li>
-            <li><a href="#download">Downloads Matrix</a></li>
+            <li><a href="#showcase">Workspace &amp; Panes</a></li>
+            <li><a href="#principles">Core Principles</a></li>
+            <li><a href="#docs">Documentation &amp; Runbook</a></li>
+            <li><a href="#download">Downloads (0.1.0-beta.1)</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Resources</h4>
+          <h4>Support &amp; Feedback</h4>
           <ul>
-            <li><a href="https://github.com/abdelrhmansilem/VirusAI/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture Documentation</a></li>
-            <li><a href="https://github.com/abdelrhmansilem/VirusAI/blob/main/SECURITY.md" target="_blank" rel="noopener">Security Model</a></li>
-            <li><a href="https://github.com/abdelrhmansilem/VirusAI/blob/main/LICENSE" target="_blank" rel="noopener">AGPL-3.0 License</a></li>
+            <li><a href="mailto:abdelrhmansleem998@gmail.com">Contact Developer</a></li>
+            <li><a href="mailto:abdelrhmansleem998@gmail.com?subject=VirusAI Bug Report">Report an Issue</a></li>
+            <li><a href="mailto:abdelrhmansleem998@gmail.com?subject=VirusAI Evaluation Feedback">Evaluation Feedback</a></li>
+            <li><a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/tag/v0.1.0-beta.1">Release Notes</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 VirusAI. Licensed under GNU AGPLv3. All brand rights reserved.</div>
-        <div>Palette: Jet Black #0B0B0C &middot; Smoke Grey #8A8D93 &middot; Cherry Red #C8102E.</div>
+        <div>&copy; 2026 VirusAI. Developed by <span class="footer-developer-tag">عبدالرحمن سليم (Abdelrhman Silem)</span>. All brand rights reserved.</div>
+        <div>Inquiries &amp; Feedback: <a href="mailto:abdelrhmansleem998@gmail.com" class="footer-email-link">abdelrhmansleem998@gmail.com</a></div>
       </div>
     </div>
   </footer>

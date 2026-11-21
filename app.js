@@ -96,7 +96,25 @@ document.addEventListener('DOMContentLoaded', () => {
     showcaseImg.classList.add('visible');
   }
 
-  // 3. OS Auto-Detection & Download Tabs
+  // 3. Documentation (Docs) Tab Switching
+  const docTabs = document.querySelectorAll('.doc-tab-btn');
+  const docPanels = document.querySelectorAll('.doc-panel');
+
+  docTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-doc');
+      docTabs.forEach(t => t.classList.remove('active'));
+      docPanels.forEach(p => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      const activePanel = document.getElementById(`doc-${target}`);
+      if (activePanel) {
+        activePanel.classList.add('active');
+      }
+    });
+  });
+
+  // 4. OS Auto-Detection & Download Tabs
   const osButtons = document.querySelectorAll('.os-tab-btn');
   const osPanels = document.querySelectorAll('.download-panel');
 
@@ -151,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Copy to Clipboard
+  // 5. Copy to Clipboard
   window.copySnippet = function(elementId, btnElement) {
     const codeEl = document.getElementById(elementId);
     if (!codeEl) return;

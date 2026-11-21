@@ -284,7 +284,7 @@ code, pre {
   background-color: var(--bg-black);
 }
 
-/* Full Bleed Building Visual Behind/Right (Just like the Blackridge photo!) */
+/* Full Bleed Building Visual Behind/Right */
 .hero-bleed-backdrop {
   position: absolute;
   top: 0;
@@ -436,7 +436,7 @@ code, pre {
 }
 
 /* ==========================================================================
-   Showcase Gallery (The Actual Tool Visuals)
+   Showcase Gallery
    ========================================================================== */
 
 .showcase-section {
@@ -625,70 +625,158 @@ code, pre {
 }
 
 /* ==========================================================================
-   Architecture & Ports
+   Documentation & Runbook Section (Docs)
    ========================================================================== */
 
-.arch-section {
+.docs-section {
   padding: 90px 0 120px;
   border-top: 1px solid var(--border-subtle);
   position: relative;
   z-index: 2;
 }
 
-.arch-container-box {
+.docs-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.docs-nav-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.doc-tab-btn {
+  text-align: left;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.doc-tab-btn:hover {
+  color: #FFFFFF;
+  background: var(--bg-card);
+  border-color: var(--border-medium);
+}
+
+.doc-tab-btn.active {
+  color: #FFFFFF;
+  background: var(--bg-card);
+  border-color: var(--border-red);
+  box-shadow: 0 0 16px var(--color-red-subtle);
+}
+
+.doc-tab-arrow {
+  color: var(--color-red);
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.doc-tab-btn.active .doc-tab-arrow {
+  opacity: 1;
+}
+
+.docs-content-container {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 44px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+  padding: 36px 40px;
+  min-height: 480px;
 }
 
-.arch-ports-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 24px;
+.doc-panel {
+  display: none;
 }
 
-.arch-port-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 12px 18px;
+.doc-panel.active {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+.doc-panel h3 {
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+.doc-panel p.doc-lead {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.65;
+}
+
+.doc-block {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 20px;
 }
 
-.arch-port-tag {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+.doc-block h4 {
+  font-size: 1rem;
   font-weight: 600;
   color: #FFFFFF;
-  background: #0B0B0C;
-  border: 1px solid var(--border-subtle);
-  padding: 3px 10px;
-  border-radius: var(--radius-pill);
+  margin-bottom: 8px;
 }
 
-.arch-port-label {
-  font-size: 0.85rem;
+.doc-block p {
+  font-size: 0.9rem;
   color: var(--text-secondary);
+  line-height: 1.6;
 }
 
-.arch-terminal-block {
+.doc-code-row {
   background: #080809;
   border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 24px;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  margin: 12px 0;
   font-family: var(--font-mono);
   font-size: 0.82rem;
   color: #D1D5DB;
-  line-height: 1.7;
   overflow-x: auto;
+}
+
+.doc-spec-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-red);
+  background: var(--color-red-subtle);
+  border: 1px solid var(--border-red);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+
+.doc-contact-highlight {
+  border-left: 3px solid var(--color-red);
+  background: rgba(200, 16, 46, 0.05);
+  padding: 18px 24px;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-top: 24px;
+}
+
+.doc-contact-highlight a {
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 500;
 }
 
 /* ==========================================================================
@@ -762,7 +850,7 @@ code, pre {
 
 .download-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-bottom: 36px;
 }
@@ -771,7 +859,7 @@ code, pre {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -780,6 +868,7 @@ code, pre {
 
 .download-card.highlight {
   border-color: var(--border-red);
+  background: linear-gradient(180deg, rgba(200, 16, 46, 0.05), var(--bg-card) 60%);
 }
 
 .download-card:hover {
@@ -805,17 +894,35 @@ code, pre {
 }
 
 .card-title {
-  font-size: 1.12rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 600;
   color: #FFFFFF;
   margin-bottom: 6px;
 }
 
 .card-meta {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-secondary);
   font-family: var(--font-mono);
   margin-bottom: 12px;
+}
+
+.card-hash-box {
+  background: #080809;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #9CA3AF;
+  word-break: break-all;
+  margin-top: 14px;
+}
+
+.card-hash-label {
+  color: var(--color-red);
+  font-weight: 600;
+  margin-right: 6px;
 }
 
 .download-terminal-box {
@@ -823,7 +930,7 @@ code, pre {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-pill);
   padding: 8px 10px 8px 20px;
-  max-width: 720px;
+  max-width: 780px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -896,8 +1003,26 @@ code, pre {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-developer-tag {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.footer-email-link {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.footer-email-link:hover {
+  color: var(--color-red);
 }
 
 /* ==========================================================================
@@ -910,7 +1035,6 @@ code, pre {
     padding: 70px 0 60px;
   }
 
-  /* Expand building backdrop across full width with dark cinematic fog on mobile */
   .hero-bleed-backdrop {
     width: 100%;
     opacity: 0.45;
@@ -931,10 +1055,20 @@ code, pre {
     gap: 28px;
   }
 
-  .arch-container-box {
+  .docs-layout {
     grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 32px;
+    gap: 24px;
+  }
+
+  .docs-nav-pills {
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .doc-tab-btn {
+    white-space: nowrap;
   }
 
   .download-cards-grid {
@@ -948,7 +1082,6 @@ code, pre {
     padding: 0 20px;
   }
 
-  /* Mobile Navigation Drawer */
   .mobile-menu-btn {
     display: flex;
   }
@@ -1014,13 +1147,17 @@ code, pre {
   }
 
   .hero-architectural-status {
-    display: none; /* Hide floating badge on small phone screens to keep text pristine */
+    display: none;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
     gap: 24px;
     margin-top: 32px;
+  }
+
+  .docs-content-container {
+    padding: 24px 20px;
   }
 
   .showcase-header {
@@ -1052,7 +1189,7 @@ code, pre {
 
   .footer-bottom {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     text-align: center;
   }
 }
