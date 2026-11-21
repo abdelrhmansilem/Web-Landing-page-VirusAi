@@ -442,7 +442,7 @@
               <div class="card-meta">Windows 10 / 11 (64-bit) &middot; v0.1.0-beta.1 (162 MB)</div>
               <p>Complete installation package bundling the Electron shell, Go engine, and PostgreSQL 16 cluster.</p>
               <div class="card-hash-box">
-                <span class="card-hash-label">SHA256:</span>eefd420f4dea2a21123dfefb620189239dfd0d31ad6f77d36e50c277bf55ac15
+                <span class="card-hash-label">SHA256:</span>54f3ad9980208e203dbf5a79acada09f43358dac79ae9572a899b421319229f3
               </div>
             </div>
             <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe" class="btn btn-primary">
@@ -471,10 +471,10 @@
             <div class="card-top">
               <span class="card-badge">Portable (.exe)</span>
               <div class="card-title">VirusAI Standalone (.exe)</div>
-              <div class="card-meta">Direct Binary &middot; v0.1.0-beta.1 (143 MB)</div>
+              <div class="card-meta">Direct Binary &middot; v0.1.0-beta.1 (144 MB)</div>
               <p>Direct standalone binary executable. Run directly from any folder without system installation.</p>
               <div class="card-hash-box">
-                <span class="card-hash-label">SHA256:</span>b9a65257f9f3201fef6a9acafeb86b81af50fff0c64ff2a7e42b4bfa6541d6df
+                <span class="card-hash-label">SHA256:</span>9e9d993126e065fe9b127ef22e535f39d519000fc437ab4d1743fec3f6520fde
               </div>
             </div>
             <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-0.1.0-beta.1.exe" class="btn btn-pill-ghost">
@@ -495,7 +495,7 @@
               <li><strong>SmartScreen after opening:</strong> click <strong>More info</strong> &rarr; <strong>Run anyway</strong>.</li>
               <li><strong>"NSIS Error / Installer integrity check has failed":</strong> the file arrived truncated &mdash; usually a scanner pausing a large download. Delete it, re-download, then verify the SHA256 above matches before running.</li>
               <li><strong>"Windows cannot access the specified device, path, or file":</strong> right-click the installer &rarr; <strong>Properties</strong> &rarr; tick <strong>Unblock</strong> &rarr; OK, and add an exclusion for the file in Defender if it was quarantined.</li>
-              <li><strong>Engine starts then silently exits after a few minutes (clean Windows):</strong> the bundled PostgreSQL needs the Microsoft Visual C++ 2015&ndash;2022 runtime. Install <a href="https://aka.ms/vs/17/release/vc_redist.x64">vc_redist.x64</a> and start again &mdash; the Engine Bundle (.zip) ships these DLLs, installers bundle them from the next build.</li>
+              <li><strong>Engine starts then silently exits after a few minutes (clean Windows):</strong> the bundled PostgreSQL needs the Microsoft Visual C++ 2015&ndash;2022 runtime &mdash; it is bundled with every download now; on machines where it still fails, install <a href="https://aka.ms/vs/17/release/vc_redist.x64">vc_redist.x64</a> and start again.</li>
               <li><strong>If your device runs Defender with strict policies:</strong> add an exclusion for the install folder (Settings &rarr; Virus &amp; threat protection &rarr; Exclusions) <strong>before</strong> installing &mdash; VirusAI ships security-testing skill modules (e.g. <code>edr-bypass-re</code>, <code>php2shell</code>) whose file names alone can trip heuristics.</li>
             </ul>
           </div>
@@ -505,7 +505,7 @@
         <div class="download-terminal-box">
           <div id="cmd-win" class="cli-code">curl.exe -L -o VirusAI-Setup-0.1.0-beta.1.exe "https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe"
 certutil -hashfile VirusAI-Setup-0.1.0-beta.1.exe SHA256
-:: the hash must equal: eefd420f4dea2a21123dfefb620189239dfd0d31ad6f77d36e50c277bf55ac15</div>
+:: the hash must equal: 54f3ad9980208e203dbf5a79acada09f43358dac79ae9572a899b421319229f3</div>
           <button class="btn btn-sm btn-pill-ghost" onclick="copySnippet('cmd-win', this)">Copy Terminal Command</button>
         </div>
       </div>
