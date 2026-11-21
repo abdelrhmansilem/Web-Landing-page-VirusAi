@@ -396,7 +396,7 @@
               </p>
               <div class="doc-contact-highlight">
                 <strong>Email:</strong> <a href="mailto:abdelrhmansleem998@gmail.com">abdelrhmansleem998@gmail.com</a><br>
-                <strong>Lead Developer:</strong> عبدالرحمن سليم (Abdelrhman Silem)<br>
+                <strong>Lead Developer:</strong> Abdelrhman Silem<br>
                 <strong>Response Window:</strong> High priority response for security evaluation findings and bug reports.
               </div>
             </div>
@@ -487,17 +487,7 @@
         <div class="security-notice-box">
           <div style="font-size: 1.25rem; line-height: 1;">🛡️</div>
           <div>
-            <strong>Notice on Windows SmartScreen &amp; Microsoft Defender:</strong>
-            VirusAI beta builds are not code-signed yet, and they ship a local network-interception proxy &mdash; so Windows has no reputation for them and browsers may show warnings (<em>"isn't commonly downloaded"</em>, <em>"SmartScreen cannot scan this file"</em>). These are reputation checks, not confirmed threats:
-            <ul style="margin: 10px 0 0 18px;">
-              <li><strong>Chrome:</strong> flagged download &rarr; click the <strong>&#9776;/&#x22EE;</strong> menu next to the file &rarr; <strong>Keep</strong>. If it says Defender "was not able to scan it", choose <strong>Keep anyway</strong>.</li>
-              <li><strong>Edge:</strong> hover the flagged download &rarr; <strong>&#x22EE;</strong> &rarr; <strong>Keep anyway</strong> (confirm again if asked).</li>
-              <li><strong>SmartScreen after opening:</strong> click <strong>More info</strong> &rarr; <strong>Run anyway</strong>.</li>
-              <li><strong>"NSIS Error / Installer integrity check has failed":</strong> the file arrived truncated &mdash; usually a scanner pausing a large download. Delete it, re-download, then verify the SHA256 above matches before running.</li>
-              <li><strong>"Windows cannot access the specified device, path, or file":</strong> right-click the installer &rarr; <strong>Properties</strong> &rarr; tick <strong>Unblock</strong> &rarr; OK, and add an exclusion for the file in Defender if it was quarantined.</li>
-              <li><strong>Engine starts then silently exits after a few minutes (clean Windows):</strong> the bundled PostgreSQL needs the Microsoft Visual C++ 2015&ndash;2022 runtime &mdash; it is bundled with every download now; on machines where it still fails, install <a href="https://aka.ms/vs/17/release/vc_redist.x64">vc_redist.x64</a> and start again.</li>
-              <li><strong>If your device runs Defender with strict policies:</strong> add an exclusion for the install folder (Settings &rarr; Virus &amp; threat protection &rarr; Exclusions) <strong>before</strong> installing &mdash; VirusAI ships security-testing skill modules (e.g. <code>edr-bypass-re</code>, <code>php2shell</code>) whose file names alone can trip heuristics.</li>
-            </ul>
+            <strong>Unsigned beta:</strong> browsers may show a SmartScreen warning &mdash; it's a reputation check, not a threat. Choose <strong>Keep</strong> (Chrome) or <strong>Keep anyway</strong> (Edge), then <strong>More info &rarr; Run anyway</strong>. If the installer reports an <em>"NSIS Error"</em>, the download was interrupted &mdash; delete it, re-download, and verify the SHA256 above.
           </div>
         </div>
 
@@ -608,7 +598,7 @@ certutil -hashfile VirusAI-Setup-0.1.0-beta.1.exe SHA256
       </div>
 
       <div class="footer-bottom">
-        <div>&copy; 2026 VirusAI. Developed by <span class="footer-developer-tag">عبدالرحمن سليم (Abdelrhman Silem)</span>. All brand rights reserved.</div>
+        <div>&copy; 2026 VirusAI. Developed by Abdelrhman Silem. All brand rights reserved.</div>
         <div>Inquiries &amp; Feedback: <a href="mailto:abdelrhmansleem998@gmail.com" class="footer-email-link">abdelrhmansleem998@gmail.com</a></div>
       </div>
     </div>
