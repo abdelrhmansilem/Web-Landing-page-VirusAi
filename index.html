@@ -458,7 +458,7 @@
               <div class="card-meta">Compressed engine bundle &middot; v0.1.0-beta.1</div>
               <p>Full headless engine bundle: binary, PostgreSQL 16 cluster, and skills. Run <code>start.bat</code> and open <code>http://127.0.0.1:8790</code>. Ideal for servers and for machines where the installer is blocked.</p>
               <div class="card-hash-box">
-                <span class="card-hash-label">SHA256:</span>8b8a58df39940e3ccbaac407862e242788622523b7a5c765c7bde0fa45999dc2
+                <span class="card-hash-label">SHA256:</span>7ed93c988b82052b9cb413e50a89673420a5c57af04ef7de138d7be89e46b60b
               </div>
             </div>
             <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/virusai-0.1.0-beta.1-windows-amd64.zip" class="btn btn-primary">
@@ -495,6 +495,8 @@
               <li><strong>SmartScreen after opening:</strong> click <strong>More info</strong> &rarr; <strong>Run anyway</strong>.</li>
               <li><strong>"NSIS Error / Installer integrity check has failed":</strong> the file arrived truncated &mdash; usually a scanner pausing a large download. Delete it, re-download, then verify the SHA256 above matches before running.</li>
               <li><strong>"Windows cannot access the specified device, path, or file":</strong> right-click the installer &rarr; <strong>Properties</strong> &rarr; tick <strong>Unblock</strong> &rarr; OK, and add an exclusion for the file in Defender if it was quarantined.</li>
+              <li><strong>Engine starts then silently exits after a few minutes (clean Windows):</strong> the bundled PostgreSQL needs the Microsoft Visual C++ 2015&ndash;2022 runtime. Install <a href="https://aka.ms/vs/17/release/vc_redist.x64">vc_redist.x64</a> and start again &mdash; the Engine Bundle (.zip) ships these DLLs, installers bundle them from the next build.</li>
+              <li><strong>If your device runs Defender with strict policies:</strong> add an exclusion for the install folder (Settings &rarr; Virus &amp; threat protection &rarr; Exclusions) <strong>before</strong> installing &mdash; VirusAI ships security-testing skill modules (e.g. <code>edr-bypass-re</code>, <code>php2shell</code>) whose file names alone can trip heuristics.</li>
             </ul>
           </div>
         </div>
