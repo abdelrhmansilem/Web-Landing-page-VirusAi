@@ -445,7 +445,7 @@
                 <span class="card-hash-label">SHA256:</span>eefd420f4dea2a21123dfefb620189239dfd0d31ad6f77d36e50c277bf55ac15
               </div>
             </div>
-            <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe" class="btn btn-primary">
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe" class="btn btn-primary">
               Download Installer (.exe)
             </a>
           </div>
@@ -453,16 +453,16 @@
           <!-- Portable Zip Archive (Antivirus-Friendly) -->
           <div class="download-card highlight">
             <div class="card-top">
-              <span class="card-badge">Recommended Archive</span>
-              <div class="card-title">VirusAI Portable (.zip)</div>
-              <div class="card-meta">Compressed ZIP &middot; v0.1.0-beta.1 (143 MB)</div>
-              <p>Compressed archive containing the standalone executable. Recommended to prevent browser download warnings.</p>
+              <span class="card-badge">Headless Engine</span>
+              <div class="card-title">VirusAI Engine Bundle (.zip)</div>
+              <div class="card-meta">Compressed ZIP &middot; v0.1.0-beta.1</div>
+              <p>Full engine bundle: binary, PostgreSQL 16 cluster, and skills. Run start.bat and open http://127.0.0.1:8790.</p>
               <div class="card-hash-box">
                 <span class="card-hash-label">SHA256:</span>b9a65257f9f3201fef6a9acafeb86b81af50fff0c64ff2a7e42b4bfa6541d6df
               </div>
             </div>
-            <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-0.1.0-beta.1-Windows-Portable.zip" class="btn btn-primary">
-              Download Portable (.zip)
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/virusai-v0.1.0-beta.1-windows-amd64.zip" class="btn btn-primary">
+              Download Engine Bundle (.zip)
             </a>
           </div>
 
@@ -477,7 +477,7 @@
                 <span class="card-hash-label">SHA256:</span>b9a65257f9f3201fef6a9acafeb86b81af50fff0c64ff2a7e42b4bfa6541d6df
               </div>
             </div>
-            <a href="https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-0.1.0-beta.1.exe" class="btn btn-pill-ghost">
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/VirusAI-0.1.0-beta.1.exe" class="btn btn-pill-ghost">
               Download Binary (.exe)
             </a>
           </div>
@@ -494,22 +494,52 @@
 
         <!-- Terminal Direct Download & Verification Box -->
         <div class="download-terminal-box">
-          <div id="cmd-win" class="cli-code">curl.exe -L -o VirusAI-Setup.exe "https://github.com/abdelrhmansilem/Web-Landing-page-VirusAi/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe"</div>
+          <div id="cmd-win" class="cli-code">curl.exe -L -o VirusAI-Setup.exe "https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/VirusAI-Setup-0.1.0-beta.1.exe"</div>
           <button class="btn btn-sm btn-pill-ghost" onclick="copySnippet('cmd-win', this)">Copy Terminal Command</button>
         </div>
       </div>
 
       <!-- Linux Downloads -->
       <div id="os-linux" class="download-panel">
-        <div class="download-card" style="max-width: 680px; margin: 0 auto; text-align: center; padding: 40px 30px;">
-          <span class="card-badge">In Testing</span>
-          <div class="card-title">Linux Universal AppImage &amp; .deb</div>
-          <p style="margin: 16px 0 24px;">
-            Linux packages (x86_64 AppImage and Debian packages) are currently undergoing beta certification. Pre-release engine binaries for Kali / Ubuntu / Arch can be requested directly.
-          </p>
-          <a href="mailto:abdelrhmansleem998@gmail.com?subject=VirusAI Linux Build Request" class="btn btn-pill-ghost" style="margin: 0 auto;">
-            Request Linux Pre-Release Binary
-          </a>
+        <div class="download-cards-grid">
+          <div class="download-card highlight">
+            <div class="card-top">
+              <span class="card-badge">Engine Bundle</span>
+              <div class="card-title">Linux x86_64 (.zip)</div>
+              <div class="card-meta">Kali / Ubuntu / Debian / Arch (64-bit) &middot; v0.1.0-beta.1</div>
+              <p>Full engine bundle with the embedded web UI, a pinned PostgreSQL 16 cluster, and the skill library. Zero system prerequisites.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/virusai-v0.1.0-beta.1-linux-amd64.zip" class="btn btn-primary">
+              Download Linux x86_64 (.zip)
+            </a>
+          </div>
+
+          <div class="download-card">
+            <div class="card-top">
+              <span class="card-badge">ARM64</span>
+              <div class="card-title">Linux ARM64 (.zip)</div>
+              <div class="card-meta">ARM servers / Raspberry-class devices &middot; v0.1.0-beta.1</div>
+              <p>The same bundle for 64-bit ARM hosts: Oracle/AWS Graviton, Ampere, and ARM laptops.</p>
+            </div>
+            <a href="https://github.com/abdelrhmansilem/VirusAI/releases/download/v0.1.0-beta.1/virusai-v0.1.0-beta.1-linux-arm64.zip" class="btn btn-primary">
+              Download Linux ARM64 (.zip)
+            </a>
+          </div>
+        </div>
+
+        <!-- Linux quick start -->
+        <div class="download-terminal-box">
+          <div id="cmd-linux" class="cli-code">unzip virusai-v0.1.0-beta.1-linux-amd64.zip && cd virusai-v0.1.0-beta.1-linux-amd64 && ./start.sh
+# then open http://127.0.0.1:8790 (setup token is printed to the console)</div>
+          <button class="btn btn-sm btn-pill-ghost" onclick="copySnippet('cmd-linux', this)">Copy Quick Start</button>
+        </div>
+
+        <!-- Linux notice -->
+        <div class="security-notice-box">
+          <div style="font-size: 1.25rem; line-height: 1;">&#128736;&#65039;</div>
+          <div>
+            <strong>How the Linux build works:</strong> the archive ships the engine, the embedded web UI, and its own PostgreSQL 16 binaries — no system packages needed. Run <code>./start.sh</code>, open <code>http://127.0.0.1:8790</code>, and set your master password (the setup token is printed to the console). The engine binds to loopback only. Desktop installers (AppImage/.deb) are planned for a later beta.
+          </div>
         </div>
       </div>
 
